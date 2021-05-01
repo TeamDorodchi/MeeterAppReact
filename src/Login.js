@@ -9,18 +9,18 @@ class Login extends React.Component{
 
 <div>
     <p>Please Enter Your Email and the Email of the Person You Would Like to Meet with Below:</p>
+<form>
+    <label for="firstemail">Your email: </label>
+    <input type="text" id="femail" name="fname"></input>
+
+    <label for="secondemail">Other email: </label>
+    <input type="text" id="secemail" name="secemail"></input>
+
+    <input onclick="myCal()" type="submit" value="Submit"></input>
+</form>
 </div>
        );
-
    }
-
-
-
-
 }
-
-
-
-
 
 export default Login;
