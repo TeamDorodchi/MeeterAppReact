@@ -5,7 +5,7 @@ import { css } from "@emotion/react";
 
 const API_KEY = "AIzaSyB1Z-hNYREWNOGpytJU46XNN3_cCTH6Efk";
 
-function myCal() {
+
     let calendars = [
         {calendarId: "#femail", color: "#B241D1"},//add a color field to specify the color of a calendar
         {calendarId: "#secemail"} //without a specified color, it defaults to blue (#4786ff)
@@ -24,7 +24,7 @@ function myCal() {
     border: 1px solid red;
   `
     }
-}
+
 class CalendarPage extends React.Component {
 
     render(): ReactNode {
