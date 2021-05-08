@@ -11,11 +11,6 @@ import {
     Link } from "react-router-dom";
 
 
-
-
-
-
-
 class App extends React.Component{
 
     render(): React.Node {
@@ -52,7 +47,9 @@ class App extends React.Component{
             </Router>
 
         );
+
     }
+
 
 }
 
