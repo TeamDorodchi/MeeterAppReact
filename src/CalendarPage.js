@@ -2,14 +2,14 @@ import React, {SyntheticEvent, Component}  from 'react';
 import ApiCalendar from 'react-google-calendar-api';
 import Calendar from "@ericz1803/react-google-calendar";
 import { css } from "@emotion/react";
-
+import Login from '../src/Login.js';
 
 const API_KEY = "AIzaSyB1Z-hNYREWNOGpytJU46XNN3_cCTH6Efk";
 
 
     let calendars = [
-        {calendarId: "kempshane22@gmail.com", color: "#B241D1"},//add a color field to specify the color of a calendar
-        {calendarId: "shrutirabara1215@gmail.com"} //without a specified color, it defaults to blue (#4786ff)
+        {calendarId: this.state.props.email1, color: "#B241D1"},//add a color field to specify the color of a calendar
+        {calendarId: this.state.props.email2} //without a specified color, it defaults to blue (#4786ff)
     ];
 
     let styles = {
@@ -23,7 +23,7 @@ const API_KEY = "AIzaSyB1Z-hNYREWNOGpytJU46XNN3_cCTH6Efk";
    /* highlight today by making the text red and giving it a red border */
     color: red;
     border: 1px solid red;
-  `
+`
     }
 
 

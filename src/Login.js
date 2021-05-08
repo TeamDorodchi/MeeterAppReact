@@ -4,21 +4,49 @@ import App from '../src/App.js'
 
 class Login extends React.Component{
 
-   render(): ReactNode{
+    constructor(props) {
+        super(props);
+        this.state = {
+            email1: "",
+            email2: "",
+        };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({email1: event.target.email1});
+        this.setState({email2: event.target.email2});
+    }
+
+    handleSubmit(event) {
+        alert('An email was submitted: ' + this.state.email1);
+        alert('An email was submitted: ' + this.state.email2);
+        event.preventDefault();
+    }
+
+
+    render(): ReactNode{
+
         return (
 
-<div>
-    <p>Please Enter Your Email and the Email of the Person You Would Like to Meet with Below:</p>
-<form>
-    <label for="firstemail">Your email: </label>
-    <input type="text" id="femail" name="fname"></input>
+            <div>
+                <h1>Please Enter In Your Email and the Email of The Person You Want to Meet With:</h1>
 
-    <label for="secondemail">Other email: </label>
-    <input type="text" id="secemail" name="secemail"></input>
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                    Your Email
+                    <input type="email" value={this.state.email1} onChange={this.handleChange} />
+                </label>
+                <label>
+                    Their Email
+                    <input type = "email" value = {this.state.email2} onChange={this.handleChange}/>
+                </label>
+                <input type="submit" value="Submit" />
+            </form>
+            </div>
 
-    <input onclick="myCal()" type="submit" value="Submit"></input>
-</form>
-</div>
        );
    }
 }
