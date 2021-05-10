@@ -10,8 +10,18 @@ import {
     Route,
     Link } from "react-router-dom";
 
+import http from '../src/utils/http.js';
+
+
+
 
 class App extends React.Component{
+
+    constructor(props){
+        super(props);
+        this.state = {userInfo:JSON.parse(localStorage.getItem('user'))};
+
+    }
 
     render(): React.Node {
         return (
@@ -34,13 +44,13 @@ class App extends React.Component{
 
                     <Switch>
                         <Route path="/HomePage">
-                            <HomePage />
+                            <HomePage user= {this.state.userInfo} />
                         </Route>
                         <Route path="/Login">
-                            <Login/>
+                            <Login user={this.state.userInfo} onLogin={(user)=>{this.setState({userInfo:user})}}/>
                         </Route>
                         <Route path="/CalendarPage">
-                            <CalendarPage />
+                            <CalendarPage user={this.state.userInfo}  />
                         </Route>
                     </Switch>
                 </div>
@@ -52,6 +62,5 @@ class App extends React.Component{
 
 
 }
-
 
 export default App;

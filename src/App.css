@@ -61,5 +61,13 @@ li a:hover {
   background-color: #DCDCDC;
 }
 
-
+.para1{
+  align:center;
+  font-size: 28px;
+  font-family: Roboto;
+  padding: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
 
